@@ -13,6 +13,8 @@ public class Student {
 	// 접근제한자 [예약어] 반환형 메소드명(매개변수) {
 	//    실행할코드
 	// }
+	// asdf
+	
 	public void study() {
 		System.out.println(name + "이 공부합니다.");
 	}
