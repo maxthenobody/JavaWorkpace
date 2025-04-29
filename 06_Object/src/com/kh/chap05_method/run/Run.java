@@ -6,35 +6,15 @@ public class Run {
 	int count = 0;
 	
 	public static void main(String[] args) {
-//		MethodTest2 mt2 = new MethodTest2();
-//		mt2.method(0); // static 메서드 호출을 위해서, 객체생성은 불필요.
+		//MethodTest2 mt2 = new MethodTest2();
+		//mt2.method(0); // 스태틱메서드 호출을 위해서, 객체생성은 불필요.
 		
-		// 클래스명, 메서드형
-		// MethodTest2.method(count); 에러남 (static 변수만 써야함)
+		// 클래스명.메서드명
+		MethodTest2.method(0);
 		Math.random();
 	}
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

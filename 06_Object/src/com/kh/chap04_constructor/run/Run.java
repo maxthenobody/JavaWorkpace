@@ -8,4 +8,14 @@ public class Run {
 		
 		User user2 = new User("user01", 20, '남');
 	}
+
 }
+
+
+
+
+
+
+
+
+

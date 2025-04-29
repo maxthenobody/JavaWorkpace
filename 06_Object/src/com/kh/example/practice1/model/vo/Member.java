@@ -1,7 +1,8 @@
 package com.kh.example.practice1.model.vo;
 
 public class Member {
-	private String memberId;
+
+	private String memeberId;
 	private String memberPwd;
 	private String memberName;
 	private int age;
@@ -9,16 +10,26 @@ public class Member {
 	private String phone;
 	private String email;
 	
-	// 생성자
 	public Member() {
 		
 	}
 	
-	public void changeName(String memberName) {
-		this.memberName = memberName;
+	public void changeName(String name) {
+		this.memberName = name;
 	}
 	
 	public void printName() {
-		System.out.println(this.memberName);
+		System.out.println(memberName);
 	}
+	
 }
+
+
+
+
+
+
+
+
+
+
