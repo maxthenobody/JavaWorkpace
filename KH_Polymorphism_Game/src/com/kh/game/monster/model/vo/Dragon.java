@@ -23,11 +23,19 @@ public class Dragon extends Monster {
 //		격마다 공격 대신 breath()스킬을 사
 //		용
 		
+		if (count > 0 && count % 3 == 0) {
+			breath(c);
+			return;
+		}
+		
 		int damage = getAtk();
 		
 		System.out.println(getName() + "이 당신을 공격했습니다.");
 		System.out.println(c.getName() + " 체력 -" + damage + ", 남은체력: " + (c.getHp() - damage));
 		c.setHp(c.getHp() - damage);
+		
+		
+		count++;
 	}
 	
 	public void breath(Characters c) {

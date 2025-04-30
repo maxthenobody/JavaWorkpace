@@ -30,6 +30,7 @@ public class Orc extends Monster {
 		
 		if (count > 0 && count % 3 == 0) {
 			heal();
+			System.out.println("오크가 힐을 했습니다.");
 		}
 		
 		count++;
