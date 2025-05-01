@@ -10,10 +10,10 @@ public class Orc extends Monster {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Orc(String name, int atk, int hp, int exp, int count) {
+	public Orc(String name, int atk, int hp, int exp) {
 		super(name, atk, hp, exp);
 		// TODO Auto-generated constructor stub
-		this.count = count;
+//		this.count = count;
 	}
 
 	@Override
@@ -21,19 +21,19 @@ public class Orc extends Monster {
 //		공격력만큼의 대미지를 플레이어에게
 //		입히는 메서드. 오크는 3번째 공격마
 //		다 heal()스킬을 사용 후 공격
+		count++;
 		
 		int damage = getAtk();
 		
-		System.out.println(getName() + "이 당신을 공격했습니다.");
+		System.out.println(getName() + "가 당신을 공격했습니다.");
 		System.out.println(c.getName() + " 체력 -" + damage + ", 남은체력: " + (c.getHp() - damage));
 		c.setHp(c.getHp() - damage);
 		
 		if (count > 0 && count % 3 == 0) {
 			heal();
-			System.out.println("오크가 힐을 했습니다.");
+			System.out.println("오크가 휴식을 취합니다!");
 		}
 		
-		count++;
 	}
 	
 	public void heal() {
