@@ -99,7 +99,7 @@ public class GameMenu {
 			break;
 		}
 		
-		String result = jobName + " 캐릭터 " + myCharacter.getName() + "가 생성되었습니다. (LV: " + myCharacter.getLevel();
+		String result = jobName + " 캐릭터 " + myCharacter.getName() + "(이)가 생성되었습니다. (LV: " + myCharacter.getLevel();
 		result += ", 공격력: " + myCharacter.getAtk() + ", 체력: " + myCharacter.getHp() + ")";
 		
 		System.out.println(result);
@@ -238,7 +238,12 @@ public class GameMenu {
 //		캐릭터 정보 :
 //		gameController의 getCharacter()함수를 호출하여 캐릭터 정보 출력
 		
-		System.out.println(gc.getCharacter());
+		if (gc.getCharacter() != null) {
+			System.out.println(gc.getCharacter());			
+		}
+		else {
+			System.out.println("캐릭터가 존재하지 않습니다. 캐릭터를 생성해주세요.");
+		}
 		mainMenu();
 	}
 }
