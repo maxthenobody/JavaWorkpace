@@ -5,7 +5,7 @@ import com.kh.game.monster.model.vo.*;
 
 public class GameController {
 	private Characters character;
-	private Monster monster;
+//	private Monster monster;
 	
 	public void createCharacter(int job, String name) {
 //		매개변수로 전달받은 job과 name을
@@ -34,6 +34,7 @@ public class GameController {
 //		매개변수로 전달받은 num을 이용하
 //		여 몬스터를 생성하는 메서드. 몬스터
 //		의 능력치는 2.사용데이터를 참고
+		Monster monster;
 		
 		switch (num) {
 		case 1:
@@ -45,6 +46,8 @@ public class GameController {
 		case 3:
 			monster = new Dragon("드래곤", 100, 200000, 300);
 			break;
+		default:
+			monster = null;
 		}
 		
 		return monster;
