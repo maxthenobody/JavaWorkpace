@@ -39,6 +39,7 @@ public class GameController {
 		switch (num) {
 		case 1:
 			monster = new Goblin("고블린", 1, 3, 100);
+//			return new Goblin("고블린", 1, 3, 100);
 			break;
 		case 2:
 			monster = new Orc("오크", 10, 100, 200);
