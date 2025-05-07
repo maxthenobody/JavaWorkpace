@@ -17,6 +17,8 @@ public class LeapView {
 		
 //		lp.leapDate(cal1);
 		
+		// true ? "평년" : "윤년"; // 3항연산자
+		
 		if (lp.isLeapYear(cal1.get(Calendar.YEAR))) {
 			System.out.println(cal1.get(Calendar.YEAR) + "년은 윤년입니다.");
 		}

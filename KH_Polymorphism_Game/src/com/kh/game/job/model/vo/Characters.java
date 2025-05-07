@@ -92,7 +92,7 @@ public abstract class Characters implements Skill {
 	
 	public abstract void attack(Monster m);
 	@Override
-	public abstract void useSkill(Monster m);
+	public abstract void useSkill(Monster m); // 생략해도 됨.
 	public abstract void levelup();
 }
 

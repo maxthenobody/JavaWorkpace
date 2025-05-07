@@ -18,6 +18,9 @@ public class LeapController {
 		else {
 			return false;
 		}
+		
+//		return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0); // 이렇게 해도 됨.
+//		return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0; // 이게 맞음. 설명이 틀림.
 	}
 	
 	public long leapDate(Calendar c) {

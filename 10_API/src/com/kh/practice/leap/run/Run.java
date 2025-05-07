@@ -6,4 +6,6 @@ public class Run {
 	public static void main(String[] args) {
 		new LeapView();
 	}
+	
+	// 정답: 739012.
 }
