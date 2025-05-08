@@ -24,7 +24,8 @@ public class FileController {
 
 //		System.out.println(""+ sb);
 		
-		fd.fileSave(file, "" + sb);
+//		fd.fileSave(file, "" + sb); // 이것도 됨
+		fd.fileSave(file, sb.toString());
 	}
 	
 	public StringBuilder fileOpen(String file) {
@@ -43,7 +44,8 @@ public class FileController {
 		// 매개변수로 넘어온 sb를 String으로 바꿔 fd의 fileEdit()메소드 매개변수로
 		// file과 String을 넘김
 		
-		fd.fileEdit(file, "" + sb);
+//		fd.fileEdit(file, "" + sb); // 이것도 됨.
+		fd.fileEdit(file, sb.toString()); // 
 	}
 }
 

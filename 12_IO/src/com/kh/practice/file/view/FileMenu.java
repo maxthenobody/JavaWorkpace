@@ -160,6 +160,23 @@ public class FileMenu {
 			mainMenu();
 		}
 	}
+	
+//	private StringBuilder addText() {
+//		StringBuilder sb = new StringBuilder();
+//		
+//		while (true) {
+//			System.out.println("파일에 저장할 내용을 입력하세요.");
+//			System.out.println("ex끝it 이라고 입력하면 종료됩니다.");
+//			System.out.print("내용: ");
+//			String input = sc.nextLine();
+//			if (input.equals("ex끝it")) {
+//				fc.fileEdit(fileNameForEdit, sb);
+//				mainMenu();
+//				break;
+//			}				
+//			sb.append(input);
+//		}
+//	}
 }
 
 
