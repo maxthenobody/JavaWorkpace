@@ -3,6 +3,7 @@ package com.kh.practice.set.controller;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 import com.kh.practice.set.model.compare.SortedLottery;
@@ -29,27 +30,27 @@ public class LotteryController {
 		// 만일 당첨자 목록에 삭제된 추첨 대상자가 있다면
 		// 기존에 당첨된 사람은 제외하고 삭제된 사람의 자리만 새로운 추첨자로 채움
 		
-		HashSet winCopy = new HashSet();
-		
-		int count = 0;
-		
 		ArrayList lottoList = new ArrayList(lottery);
 		
 		if (lottery.size() < 4) {
 //			throw new Exception("추첨자 수가 4명 미만입니다.");
 			System.out.println("추첨자 수가 4명 미만입니다.");
-//			return null;
+			return null;
 		}
 		
-		while (count < 4) {
-			if (winCopy.add(lottoList.get((int) (Math.random() * lottoList.size())))){
-				count++;
+		Iterator iter = win.iterator();
+		
+		while (iter.hasNext()) {
+			Lottery l = (Lottery) iter.next();
+			
+			if (!lottery.contains(l)) {
+				iter.remove();
 			}
 		}
 		
-//		winCopy.addAll(win);
-		
-		win = winCopy;
+		while (win.size() < 4) {
+			win.add((Lottery)lottoList.get((int) (Math.random() * lottoList.size())));
+		}
 		
 		return win;
 	}

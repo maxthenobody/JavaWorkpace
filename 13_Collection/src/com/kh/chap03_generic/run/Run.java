@@ -39,7 +39,7 @@ public class Run {
 		System.out.println("111".getClass());
 		
 		Generic<String, Integer> g2 = new Generic<>();
-		g2.setT(1111); // g2 에서 T 는 String 자료형
+//		g2.setT(1111); // g2 에서 T 는 String 자료형
 		
 		// 대입될 데이터의 타입을 미리 정해두지 않고, 컴파일 시점에서 정해주므로 재사용성이 크게 증가한다.
 		
