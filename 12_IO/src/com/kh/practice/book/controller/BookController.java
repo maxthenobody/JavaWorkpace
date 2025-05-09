@@ -24,18 +24,6 @@ public class BookController {
 				e.printStackTrace();
 			}
 		}
-		
-//		try (DataOutputStream ds = new DataOutputStream(new FileOutputStream("book.txt"))){
-//			
-//			
-//			
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
 	}
 	
 	public void fileSave(Book[] bArr) {

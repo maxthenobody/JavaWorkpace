@@ -64,13 +64,10 @@ public class BookMenu {
 		
 		System.out.print("도서 명: ");
 		String title = sc.nextLine();
-		
 		System.out.print("저자 명: ");
 		String author = sc.nextLine();
-		
 		System.out.print("도서 가격: ");
 		int price = sc.nextInt();
-		
 		sc.nextLine();
 		System.out.print("출판 날짜(yyyy-mm-dd): ");
 		String date = sc.nextLine();
@@ -84,12 +81,6 @@ public class BookMenu {
 		double discount = sc.nextDouble();
 		sc.nextLine();
 		
-//		System.out.println(bArr);
-		
-//		for (int i = 0; i < bArr.length; i++) {
-//			System.out.println(bArr[i]);
-//		}
-		
 		int index = 0;
 		for (Book b: bArr) {
 			if (b == null) {
@@ -99,9 +90,6 @@ public class BookMenu {
 		}
 		
 		bArr[index] = new Book(title, author, price, cal, discount);
-		// [1]
-		// [1,2]
-//		System.out.println(bArr.length);
 		
 		bc.fileSave(bArr);
 	}
@@ -117,8 +105,6 @@ public class BookMenu {
 				System.out.println(bArr[i]);
 			}
 		}
-		
-//		System.out.println(bc.fileRead());
 	}
 }
 

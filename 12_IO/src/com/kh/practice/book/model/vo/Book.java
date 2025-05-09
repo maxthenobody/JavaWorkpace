@@ -6,11 +6,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Book implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
 	private String title;
 	private String author;
 	private int price;
@@ -26,9 +21,6 @@ public class Book implements Serializable {
 		this.title = title;
 		this.author = author;
 		this.price = price;
-		
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
-		
 		this.date = date;
 		this.discount = discount;
 	}
@@ -75,19 +67,11 @@ public class Book implements Serializable {
 
 	@Override
 	public String toString() {
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분 ss초");
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy MM dd");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
 		
 		long mills = date.getTimeInMillis();
 		
 		Date date = new Date(mills);
-		
-//		System.out.println(date);
-//		
-//		System.out.println(sdf.format(date));
-		
-//		return "Book [title=" + title + ", author=" + author + ", price=" + price + ", date=" + sdf.format(date) + ", discount="
-//				+ discount + "]";
 		
 		return title + "\t" + author + "\t" + price + "\t" + sdf.format(date) + "\t" + discount;
 	}
