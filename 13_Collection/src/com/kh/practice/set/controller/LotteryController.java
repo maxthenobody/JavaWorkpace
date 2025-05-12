@@ -19,7 +19,16 @@ public class LotteryController {
 	}
 	
 	public boolean deleteObject(Lottery l) {
-		return lottery.remove(l);
+		
+		boolean result = lottery.remove(l);
+		
+		if (result && win != null & !win.isEmpty()) {
+			win.remove(l);
+		}
+		
+		return result;
+		
+//		return lottery.remove(l);
 	}
 	
 	public HashSet winObject() {
@@ -60,6 +69,8 @@ public class LotteryController {
 		// 정렬기준을 가지고 정렬된 결과를 반환
 		// 이 때, 미리 만들어진 win을 가지고 정렬하기 때문에
 		// 당첨 대상 확인을 꼭 먼저 해야함
+		
+		winObject();
 		
 		Comparator comp = new SortedLottery();
 		

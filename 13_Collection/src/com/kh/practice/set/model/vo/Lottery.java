@@ -2,7 +2,7 @@ package com.kh.practice.set.model.vo;
 
 import java.util.Objects;
 
-public class Lottery {
+public class Lottery implements Comparable {
 	private String name;
 	private String phone;
 	
@@ -52,6 +52,12 @@ public class Lottery {
 			return false;
 		Lottery other = (Lottery) obj;
 		return Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return this.phone.compareTo(((Lottery)o).phone);
 	}
 	
 	

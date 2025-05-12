@@ -3,8 +3,7 @@ package com.kh.chap03_generic.run;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kh.chap03_generic.model.vo.Generic;
-
+import com.kh.chap03_generic.model.vo.*;
 public class Run {
 	public static void main(String[] args) {
 		// 1. 제네릭 등장이전
@@ -46,6 +45,58 @@ public class Run {
 		// 3. 제네릭의 extends
 		//  - 제네릭에서의 extends 는 클래스간의 상속개념이 아닌, 제네릭으로 지정한 자료형을 "제한" 시키는데 사용한다.
 		//  - <T extends Parent>: 타입변수에는 Parent 클래스 및 Parent 클래스를 상속받은 자료형만 제시할 수 있다.
+		//  - <T extends Interafce>: Interface 를 구현한 클래스만 타입변수에 제시 가능.
+		
+		Generic2<Parent> parent = new Generic2<>();
+		Generic2<Child1> child1 = new Generic2<>();
+//		Generic2<String> str = new Generic<>(); // Parent 의 자식이 아니므로 객체 생성 불가.
+		
+		parent.setT(new Parent());
+		parent.printing();
+		
+		/*
+		 * 4. 와일드카드(?)
+		 *  - Generic 에 들어가야할 자료형을 모르는 경우 사용.
+		 *  - 와일드카드(?) 의 의미는 어떤 자료형이 들어올지 모른다(unknown)의 의미로 사용.
+		 *    ? 가 어떤 자료형이든 올 수 있다는(any)의 의미가 아니다.
+		 *  - ? 에는 super 와 extends 를 사용하여 와일드카드의 범위를 제한할 수 있다.
+		 *  - ? extends T: 상한제한 => 와일드 카드의 범위를 T 또는 T의 자식들로 제한.
+		 *  - ? super T: 하한제한 => 와일드 카드의 범위를 T 또는 T 의 조상들로 제한.
+		 */
+		Generic2<?> unknown = new Generic2<>();
+//		unknown.setT(new Parent());
+		// ? 는 자료형의 범위가 정해져 있지 않은 상태(unknown).
+		// ? 로 타입변수 사용시 올바른 값이 들어갔는지 검사가 불가능하므로 에러를 발생.
+		// ? 의 제대로 된 사용을 위해선 extends 와 super 를 활용하여 ? 의 범위를 정해줘야 한다.
+		
+		// 1) extends 를 통한 와일드 카드의 범위 제한
+		Generic2<? extends Parent> unknown2 = new Generic2<>();
+		// ? 의 범위: Parent, Parent 의 자식들.
+		
+//		unknown2.setT(new Parent()); // ? 범위에 Parent 의 자식 클래스도 포함되어 있으므로, "대입 불가."
+//		unknown2.setT(new Child1()); // ? 범위에 Child2 도 포함되어 있으므로, "대입 불가."
+		
+		Parent p = unknown2.getT(); // ? 가 Parent 이든, 그 자식이든 다형성에 의해 값을 추출하여 대입 가능.
+		// extends 를 통한 타입 제한은 데이터를 "가져올때" 사용한다.
+		
+		// 2) super 를 통한 와일드 카드 범위제한: 하한제한
+		// ? super Parent: 와일드 카드의 범위는 최소 Parent, Parent 의 조상클래스
+		Generic2<? super Parent> unknown3 = new Generic2<>();
+		// ? 의 범위: Parent 와, Object
+		
+		unknown3.setT(new Parent());
+//		Object o = new Parent();
+//		Parent p2 = new Parent();
+		unknown3.setT(new Child1());
+		unknown3.setT(new Child2()); // 최소 자료형이 Parent 이기 때문에 대입에 문제 없음.
+		// 값을 "대입 할 때는 super 를 쓰는게 적절하다.
+		
+//		Parent p3 = unknown3.getT(); // ? 는 Object 일 수도 있음.
+		
+		Parent p4 = new Parent();
+//		Parent p5 = new Object(); // 상속관계긴 하지만, 저장시 다운캐스팅 필요하므로 컴파일 에러 발생
+		
+		
 	}
 }
 
