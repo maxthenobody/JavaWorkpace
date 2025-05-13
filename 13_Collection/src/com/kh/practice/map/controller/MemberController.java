@@ -41,6 +41,7 @@ public class MemberController {
 		
 		if (map.containsKey(id) && ((Member)map.get(id)).getPassword().equals(oldPw)) {
 			map.replace(id, new Member(newPw, ((Member)map.get(id)).getName()));
+//			((Member)map.get(id)).setPassword(newPw); // 이렇게 해도 됨.
 			return true;
 		}
 		
