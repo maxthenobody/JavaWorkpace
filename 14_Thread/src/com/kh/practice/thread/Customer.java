@@ -17,12 +17,7 @@ public class Customer extends Thread {
 //		초 중지
 		
 		for (int i = 0; i < 10; i++) {
-			try {
-//				System.out.println(data.getValue());
-				data.getValue();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			data.getValue();
 			
 			try {
 				Thread.sleep(100);

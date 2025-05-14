@@ -36,7 +36,7 @@ public class Data {
 		}
 	}
 
-	public int getValue() throws EmptyException {
+	public int getValue() {
 //		value 값을 꺼냄
 //		단, isEmpty 가 false
 //		가 될때까지 기다림, false 가 되면
@@ -53,14 +53,15 @@ public class Data {
 		synchronized(this) {			
 			if (isEmpty == true) {
 				try {
-					wait();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+					throw new EmptyException("현재 입력된 값이 없습니다. 기다리십시오…");					
+				} catch (EmptyException e) {
+					System.out.println(e.getMessage());
+					try {
+						wait();
+					} catch (InterruptedException ee) {
+						ee.printStackTrace();
+					}					
 				}
-			}
-			
-			if (isEmpty) {
-				throw new EmptyException("현재 입력된 값이 없습니다. 기다리십시오…");
 			}
 			
 			isEmpty = true;
