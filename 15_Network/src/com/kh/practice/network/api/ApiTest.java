@@ -22,12 +22,9 @@ public class ApiTest {
 		String serviceKey = "EYfxSHTXkgG125OxL9MKfyzSb7vt0K1NJ6B176dawwRLzRlSPU9xphZaKmaD2tR1xHts6o0l5Du2TRkHPpQHmQ%3D%3D";
 		
 		try {
-			requestURL += "?serviceKey=" + serviceKey;
-			requestURL += "&stationName=" + URLEncoder.encode("종로구", "UTF-8");
-			requestURL += "&dataTerm=DAILY";
-//			requestURL += "?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + URLEncoder.encode(serviceKey, "UTF-8");
-//			requestURL += "&" + URLEncoder.encode("stationName", "UTF-8") + "=" + URLEncoder.encode("종로구", "UTF-8");
-//			requestURL += "&" + URLEncoder.encode("dataTerm", "UTF-8") + "=" + URLEncoder.encode("DAILY", "UTF-8");
+			requestURL += "?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey;
+			requestURL += "&" + URLEncoder.encode("stationName", "UTF-8") + "=" + URLEncoder.encode("종로구", "UTF-8");
+			requestURL += "&" + URLEncoder.encode("dataTerm", "UTF-8") + "=" + URLEncoder.encode("DAILY", "UTF-8");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
