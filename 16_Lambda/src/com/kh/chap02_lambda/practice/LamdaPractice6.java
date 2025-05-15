@@ -25,7 +25,7 @@ public class LamdaPractice6 {
 			} else if (mode.equals("reverse")) {
 				return -x.compareTo(y);
 			} else {
-				return 0;
+				return x.compareTo(y);
 			}
 		};
 		
