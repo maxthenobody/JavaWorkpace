@@ -14,7 +14,7 @@ public class LamdaPractice6 {
 		names.sort(comp);
 		System.out.println(names); // 알파벳 역순 정렬
 	}
-
+	
 	public static Comparator<String> getComparator(String mode) {
 		// 코드 구현
 		Comparator<String> comp;
@@ -30,5 +30,14 @@ public class LamdaPractice6 {
 		};
 		
 		return comp;
+		
+//		switch (mode) { // 이렇게 해도 됨.
+//		case "length":
+//			return (x, y) -> x.length() - y.length();
+//		case "reverse":
+//			return (x, y) -> -x.compareTo(y);
+//		default:
+//			return (x, y) -> x.compareTo(y);
+//		}
 	}
 }

@@ -13,4 +13,8 @@ public class LamdaPractice1 {
 			 }
 		 }
 	}
+	
+//	interface StringChecker { // 이런식으로 해도 됨.
+//		boolean check(String str);
+//	}
 }

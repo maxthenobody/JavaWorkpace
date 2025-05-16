@@ -25,5 +25,14 @@ public class LamdaPractice5 {
 		};		
 		
 		return getop;
+		
+//		switch (type) { // 이렇게 해도 됨.
+//		case "+":
+//			return (x, y) -> x + y;
+//		case "*":
+//			return (x, y) -> x * y;
+//		default:
+//			throw new RuntimeException("잘못된 연산자입니다.");
+//		}
 	}
 }
